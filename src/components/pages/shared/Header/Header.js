@@ -1,10 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import logo from '../../../assest/LOGO.png';
+import { XMarkIcon, Bars4Icon } from '@heroicons/react/24/solid';
+import LinkNav from './LinkNav';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
+    const [open, setOpen] = useState(false);
+
+    const routes = [
+        { id: 1, name: 'Home', path: './home' },
+        { id: 1, name: 'Products', path: './products' },
+        { id: 1, name: 'Orders', path: './orders' },
+        { id: 1, name: 'Contact', path: './contact' },
+        { id: 1, name: 'About', path: './about' }
+    ];
+
     return (
         <div>
+
+            <nav className='bg-purple-200 w-full' >
+                <div onClick={() => setOpen(!open)} className="h-6 w-6 text-blue-500 md:hidden">
+                    {
+                        open ? <XMarkIcon /> : <Bars4Icon />
+                    }
+                </div>
+                <ul className={` bg-purple-200 w-full md:flex justify-center absolute md:static duration-500 ease-in ${open ? 'top-6' : 'top-[-120px]'} `}>
+                    {
+                        routes.map(route => <LinkNav
+                            key={route.id}
+                            route={route}
+                        ></LinkNav>)
+                    }
+                </ul>
+            </nav>
+
             <header>
                 <nav className="bg-white border-green-200 px-4 lg:px-6 py-2.5 dark:bg-green-500">
                     <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
@@ -13,8 +43,9 @@ const Header = () => {
                             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></span>
                         </Link>
                         <div className="flex items-center lg:order-2">
-                            <Link href="#" className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</Link>
-                            <Link href="#" className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">Get started</Link>
+                            <Link to="/login" className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</Link>
+
+                            <Link to="/register" className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Register</Link>
                             <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-green-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                                 <span className="sr-only">Open main menu</span>
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -22,24 +53,21 @@ const Header = () => {
                             </button>
                         </div>
                         <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-                            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                                <li>
-                                    <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">About</Link>
-                                </li>
-                                <li>
-                                    <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Coures</Link>
-                                </li>
-                                <li>
-                                    <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Blog</Link>
-                                </li>
-                                <li>
-                                    <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Contact</Link>
-                                </li>
+                            <div className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
 
-                            </ul>
+                                <Link to='/' className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</Link>
+
+                                <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">About</Link>
+
+                                <Link to='/categories' className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Category</Link>
+
+                                <Link to='/coures' className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Coures</Link>
+
+
+                                <Link href="#" className="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white">Contact</Link>
+
+
+                            </div>
                         </div>
                     </div>
                 </nav>
