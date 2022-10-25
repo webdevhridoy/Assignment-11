@@ -1,10 +1,19 @@
+import React from "react";
+import ReactToPdf from "react-to-pdf";
 import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseInfo = () => {
     const courseInfo = useLoaderData();
     const { course_name, image, price, rating, author, author_img, students, category, details, id } = courseInfo;
+    const ref = React.createRef();
+    const options = {
+        orientation: 'landscape',
+        unit: 'in',
+        format: [11.25, 7.50]
+    };
+
     return (
-        <div>
+        <div ref={ref}>
             <div
                 style={{
                     backgroundImage: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("https://i.ibb.co/MVwcg08/getty-492755552-336645.jpg")',
@@ -29,7 +38,11 @@ const CourseInfo = () => {
                             </div>
                         </div>
                         <div className='mt-5'>
-                            <Link className='bg-outline-500 border-2 text-white border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>Download PDF</Link>
+                            <Link className='bg-outline-500 border-2 text-white border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>
+                                <ReactToPdf className='' targetRef={ref} filename="LearnWithHridoy.pdf" options={options} x={0.5} y={0.5} scale={0.8}>
+                                    {({ toPdf }) => (
+                                        <button onClick={toPdf}>Generate & Download PDF</button>
+                                    )}</ReactToPdf></Link>
                         </div>
                     </div>
                 </div>
