@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
 
@@ -11,15 +11,19 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const signInGoogle = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     };
+    const signInWithGithub = () => {
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider);
+    };
 
     const newUser = (email, password) => {
         setLoading(true);
-
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
@@ -44,9 +48,10 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             // email verification purpose
-            if (currentUser == null || currentUser.emailVerified) {
-                setUser(currentUser);
-            }
+            // if (currentUser == null || currentUser.emailVerified) {
+            //     setUser(currentUser);
+            // }
+            setUser(currentUser);
             setLoading(false);
         });
         return () => {
@@ -56,7 +61,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const authInfo = { user, verifyEmail, updateUserInfo, loading, signInGoogle, userSignOut, newUser, signInUser, setLoading };
+    const authInfo = { user, verifyEmail, updateUserInfo, loading, signInGoogle, userSignOut, newUser, signInUser, setLoading, signInWithGithub };
 
     return (
         <AuthContext.Provider value={authInfo}>
