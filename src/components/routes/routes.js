@@ -19,11 +19,11 @@ export const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
-            {
-                path: '/coures',
-                loader: () => fetch('https://learn-with-hridoy-server.vercel.app/courses/'),
-                element: <AllCourses></AllCourses>
-            },
+            // {
+            //     path: '/coures',
+            //     loader: () => fetch('https://learn-with-hridoy-server.vercel.app/courses/'),
+            //     element: <AllCourses></AllCourses>
+            // },
             {
                 path: '/course-details/:id',
                 loader: ({ params }) => fetch(`https://learn-with-hridoy-server.vercel.app/courses/${params.id}`),
