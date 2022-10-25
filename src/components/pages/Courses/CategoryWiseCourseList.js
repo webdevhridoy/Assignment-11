@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CourseList = ({ details }) => {
+const CategoryWiseCourseList = ({ details }) => {
     console.log(details);
     const { course_name, short_details, price, rating, image, id } = details;
     return (
@@ -29,4 +29,4 @@ const CourseList = ({ details }) => {
     );
 };
 
-export default CourseList;
+export default CategoryWiseCourseList;

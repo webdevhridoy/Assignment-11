@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CoursesDetails = ({ courses }) => {
     console.log(courses);
-    const { course_name, image, short_details, price, rating } = courses;
+    const { course_name, image, short_details, price, rating, id } = courses;
     return (
         <div>
             <div className="max-w-xs p-6 rounded-md shadow-md m-3">
@@ -21,7 +21,7 @@ const CoursesDetails = ({ courses }) => {
                         <span className="block text-xs font-medium tracking-widest uppercase text-green-600">Rating: {rating}</span>
                     </div>
                     <div className='mt-5 flex justify-center items-center'>
-                        <Link className='bg-outline-500 border-2 border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>Enroll Now</Link>
+                        <Link to={`/course-details/${id}`} className='bg-outline-500 border-2 border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>Enroll Now</Link>
                     </div>
                 </div>
             </div>

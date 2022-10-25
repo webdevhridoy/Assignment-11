@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import CourseList from './CourseList';
+import CategoryWiseCourseList from './CategoryWiseCourseList';
 
-const CategoryDetails = () => {
+const CategoryList = () => {
     const categoryDetail = useLoaderData();
     console.log(categoryDetail);
     return (
@@ -12,14 +12,14 @@ const CategoryDetails = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 mt-3'>
                 {
                     categoryDetail.map(details =>
-                        <CourseList
-                            key={details.id}
+                        <CategoryWiseCourseList
+                            key={details._id}
                             details={details}
-                        ></CourseList>)
+                        ></CategoryWiseCourseList>)
                 }
             </div>
         </div>
     );
 };
 
-export default CategoryDetails;
+export default CategoryList;

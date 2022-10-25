@@ -2,11 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Login from "../authentication/Login/Login";
 import Register from "../authentication/Register/Register";
-import AllCourses from "../pages/Courses/AllCourses";
-import CategoryDetails from "../pages/Courses/CategoryDetails";
-import Courses from "../pages/Courses/Courses";
+import CategoryList from "../pages/Courses/CategoryList";
+import CourseLayout from "../pages/Courses/CourseLayout";
 import Home from "../pages/Home/Home";
 import Error from "../pages/shared/Error/Error";
+import AllCourses from "../pages/Courses/AllCourses";
+import CourseInfo from "../pages/Courses/CourseInfo";
 
 export const routes = createBrowserRouter([
 
@@ -21,19 +22,25 @@ export const routes = createBrowserRouter([
             {
                 path: '/coures',
                 loader: () => fetch('https://learn-with-hridoy-server.vercel.app/courses/'),
-                element: <Courses></Courses>
+                element: <AllCourses></AllCourses>
+            },
+            {
+                path: '/course-details/:id',
+                loader: ({ params }) => fetch(`https://learn-with-hridoy-server.vercel.app/courses/${params.id}`),
+                element: <CourseInfo></CourseInfo>
             },
             {
                 path: '/categories',
                 loader: () => fetch('https://learn-with-hridoy-server.vercel.app/categories'),
-                element: <AllCourses></AllCourses>,
+                element: <CourseLayout></CourseLayout>,
                 children: [
 
                     {
                         path: '/categories/:name',
                         loader: ({ params }) => fetch(`https://learn-with-hridoy-server.vercel.app/categories/${params.name}`),
-                        element: <CategoryDetails></CategoryDetails>
+                        element: <CategoryList></CategoryList>
                     }
+
                 ]
             },
             {
