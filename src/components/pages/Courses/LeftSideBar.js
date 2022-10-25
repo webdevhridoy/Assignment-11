@@ -16,8 +16,8 @@ const LeftSideBar = () => {
             <hr className='border-b-2 border-b-green-100 mx-auto w-1/2 h-1' />
             <div className='text-center md:text-left grid grid-cols-3 md:grid-cols-1 mt-2'>
                 {
-                    categories.map(category =>
-                        <p key={category.id}>
+                    categories.map((category, index) =>
+                        <p key={index}>
                             <Link className='block text-gray-600 text-lg my-1 hover:underline hover:text-green-500' to={`/categories/${category.category}`}>{category.category}</Link>
                         </p>
                     )

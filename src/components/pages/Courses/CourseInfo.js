@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 const CourseInfo = () => {
     const courseInfo = useLoaderData();
     console.log(courseInfo);
-    const { course_name, image, short_details, price, rating, id, author, author_img, students, category, details } = courseInfo;
+    const { course_name, image, price, rating, author, author_img, students, category, details } = courseInfo;
     return (
         <div>
             <div
@@ -48,14 +48,18 @@ const CourseInfo = () => {
                         <span className="block text-xs font-medium tracking-widest uppercase text-green-600 ml-1">{rating}</span>
                     </div>
                 </div>
+                <hr className='border-b-2 border-b-green-100 mx-auto w-1/2 my-5' />
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center mx-5 md:mx-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center mx-5 md:mx-10 py-10'>
                 <div className='text-center md:text-left mr-8'>
                     <h2 className='text-3xl font-semibold my-2'>Course Description</h2>
                     <p className="text-gray-500 text-base my-2">{details}</p>
+                    <div className='mt-5 mb-5'>
+                        <Link className='bg-outline-500 border-2 border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>Get premium access</Link>
+                    </div>
                 </div>
                 <div>
-                    <img className='w-full h-auto' src={image} alt="" />
+                    <img className='w-full h-auto shadow-lg rounded-3xl' src={image} alt="" />
                 </div>
 
             </div>

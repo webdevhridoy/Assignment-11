@@ -27,8 +27,8 @@ const Header = () => {
                 </div>
                 <ul className={` bg-purple-200 w-full md:flex justify-center absolute md:static duration-500 ease-in ${open ? 'top-6' : 'top-[-120px]'} `}>
                     {
-                        routes.map(route => <LinkNav
-                            key={route.id}
+                        routes.map((route, index) => <LinkNav
+                            key={index}
                             route={route}
                         ></LinkNav>)
                     }

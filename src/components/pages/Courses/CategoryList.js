@@ -11,9 +11,9 @@ const CategoryList = () => {
             <hr className='border-b-2 border-b-green-100 w-1/2 mx-auto h-1' />
             <div className='grid grid-cols-1 md:grid-cols-2 mt-3'>
                 {
-                    categoryDetail.map(details =>
+                    categoryDetail.map((details, index) =>
                         <CategoryWiseCourseList
-                            key={details._id}
+                            key={index}
                             details={details}
                         ></CategoryWiseCourseList>)
                 }
