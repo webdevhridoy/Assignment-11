@@ -6,7 +6,6 @@ import CategoryList from "../pages/Courses/CategoryList";
 import CourseLayout from "../pages/Courses/CourseLayout";
 import Home from "../pages/Home/Home";
 import Error from "../pages/shared/Error/Error";
-import AllCourses from "../pages/Courses/AllCourses";
 import CourseInfo from "../pages/Courses/CourseInfo";
 import PrivateRoute from "./PrivateRoute";
 import Checkout from "../pages/Checkout/Checkout";

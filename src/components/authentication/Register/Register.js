@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
-// import toast from 'react-hot-toast';
 
 const Register = () => {
     const { newUser, updateUserInfo, signInGoogle, signInWithGithub } = useContext(AuthContext);
@@ -21,7 +21,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 navigate('/');
-                // toast.success('Successfully registered!');
+                toast.success('Registered Completed!');
                 userUpdateProfile(name);
 
             })
