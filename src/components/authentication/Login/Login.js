@@ -34,7 +34,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error);
@@ -46,7 +46,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error);
@@ -56,7 +56,7 @@ const Login = () => {
     return (
         <div className='flex justify-center items-center align-middle h-screen md:m-0 m-5'>
             <div className="flex flex-col just w-full max-w-md p-12 space-y-4 text-white text-center dark:bg-green-500 dark:text-white-100">
-                <h1 className="text-3xl font-semibold">Sign in to your account</h1>
+                <h1 className="text-2xl font-bold text-center mb-10">Sign in to your account</h1>
                 <form onSubmit={handleLogin} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="email" className="block text-white">Email</label>

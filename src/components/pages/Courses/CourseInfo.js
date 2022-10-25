@@ -1,10 +1,10 @@
-import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseInfo = () => {
     const courseInfo = useLoaderData();
-    console.log(courseInfo);
-    const { course_name, image, price, rating, author, author_img, students, category, details } = courseInfo;
+
+    // console.log(courseInfo);
+    const { course_name, image, price, rating, author, author_img, students, category, details, id } = courseInfo;
     return (
         <div>
             <div
@@ -55,7 +55,7 @@ const CourseInfo = () => {
                     <h2 className='text-3xl font-semibold my-2'>Course Description</h2>
                     <p className="text-gray-500 text-base my-2">{details}</p>
                     <div className='mt-5 mb-5'>
-                        <Link to='/checkout' className='bg-outline-500 border-2 border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>Get premium access</Link>
+                        <Link to={`/course-details/checkout/${id}`} className='bg-outline-500 border-2 border-green-500 hover:bg-green-500 hover:text-white px-2 py-2 rounded-3xl duration-500 ease-in-out'>Get premium access</Link>
                     </div>
                 </div>
                 <div>

@@ -9,6 +9,7 @@ import Error from "../pages/shared/Error/Error";
 import CourseInfo from "../pages/Courses/CourseInfo";
 import PrivateRoute from "./PrivateRoute";
 import Checkout from "../pages/Checkout/Checkout";
+import Blog from "../pages/Blog/Blog";
 
 export const routes = createBrowserRouter([
 
@@ -31,12 +32,13 @@ export const routes = createBrowserRouter([
                 element: <CourseInfo></CourseInfo>
             },
             {
-                path: '/checkout',
+                path: '/course-details/checkout/:id',
+                loader: ({ params }) => fetch(`https://learn-with-hridoy-server.vercel.app/courses/${params.id}`),
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
             },
             {
                 path: '/categories',
-                loader: () => fetch('https://learn-with-hridoy-server.vercel.app/categories'),
+                // loader: () => fetch('https://learn-with-hridoy-server.vercel.app/categories'),
                 element: <CourseLayout></CourseLayout>,
                 children: [
 
@@ -47,6 +49,10 @@ export const routes = createBrowserRouter([
                     }
 
                 ]
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/login',

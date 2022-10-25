@@ -5,7 +5,7 @@ import CoursesDetails from './CoursesDetails';
 const AllCourses = () => {
     const allCourses = useLoaderData();
 
-    console.log(allCourses);
+    // console.log(allCourses);
 
     return (
         <div>

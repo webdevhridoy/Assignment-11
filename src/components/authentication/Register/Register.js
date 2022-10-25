@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const Register = () => {
     const { newUser, updateUserInfo, signInGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSignUp = (e) => {
         e.preventDefault();
@@ -20,7 +22,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/');
+                navigate(from, { replace: true });
                 toast.success('Registered Completed!');
                 userUpdateProfile(name);
 
@@ -49,7 +51,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/');
+                navigate(from, { replace: true });
+                toast.success('Registered Completed!');
             })
             .catch(error => {
                 console.error(error);
@@ -61,7 +64,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/');
+                navigate(from, { replace: true });
+                toast.success('Registered Completed!');
             })
             .catch(error => {
                 console.error(error);
@@ -69,8 +73,8 @@ const Register = () => {
     };
 
     return (
-        <div className='flex justify-center items-center align-middle h-screen'>
-            <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-green-500 dark:text-gray-100">
+        <div className='flex justify-center items-center align-middle h-screen md:m-0 m-5'>
+            <div className="w-full max-w-md p-8 space-y-3  bg-green-500 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center mb-10">Create a new account</h1>
                 <form onSubmit={handleSignUp} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">

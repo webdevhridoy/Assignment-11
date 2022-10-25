@@ -5,7 +5,9 @@ import Header from '../components/pages/shared/Header/Header';
 const Main = () => {
     return (
         <div>
-            <Header></Header>
+            <div className='mb-10'>
+                <Header></Header>
+            </div>
             <Outlet></Outlet>
         </div>
     );

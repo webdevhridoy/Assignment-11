@@ -14,7 +14,7 @@ const Home = () => {
                         <Link rel="noopener noreferrer" to='/' className="px-8 py-3 font-semibold rounded dark:bg-green-500 dark:text-white ml-2">Our Blogs</Link>
                     </div>
                 </div>
-                <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 w-fit mt-10 lg:mt-">
                     <img src="https://i.ibb.co/NN3GHxH/banner-image.png" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CoursesDetails = ({ courses }) => {
-    console.log(courses);
+    // console.log(courses);
     const { course_name, image, short_details, price, rating, id } = courses;
     return (
         <div>
@@ -13,7 +13,9 @@ const CoursesDetails = ({ courses }) => {
                         <h2 className="text-base font-semibold tracking-wide">{course_name}</h2>
                     </div>
                     <div>
-                        <p className="text-gray-500 text-sm">{short_details.slice(0, 80)}...</p>
+                        <p className="text-gray-500 text-sm">
+                            {short_details.length > 80 ? short_details.slice(0, 80) : short_details}
+                        </p>
                     </div>
                     <hr className='border-b-2 border-b-green-100 mx-auto w-1/2 my-5' />
                     <div className='flex justify-between items-center mt-5'>
