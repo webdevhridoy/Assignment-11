@@ -44,7 +44,6 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/categories',
-                // loader: () => fetch('https://learn-with-hridoy-server.vercel.app/categories'),
                 element: <CourseLayout></CourseLayout>,
                 children: [
 

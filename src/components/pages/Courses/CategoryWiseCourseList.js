@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CategoryWiseCourseList = ({ details }) => {
-    // console.log(details);
     const { course_name, short_details, price, rating, image, id } = details;
     return (
         <div>

@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import logo from '../../../assest/LOGO.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider';
+import toast from 'react-hot-toast';
 
 
 const Header = () => {
@@ -22,7 +23,9 @@ const Header = () => {
 
     const handleSignOut = () => {
         userSignOut()
-            .then(() => { })
+            .then(() => {
+                toast.success('Log out successfully!');
+            })
             .then(error => console.error(error));
     };
 

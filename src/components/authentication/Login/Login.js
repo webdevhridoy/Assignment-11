@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 
 
 const Login = () => {
-    const { signInUser, signInGoogle, signInWithGithub } = useContext(AuthContext);
+    const { signInUser, signInGoogle, signInWithGithub, setLoading } = useContext(AuthContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -21,11 +22,20 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate(from, { replace: true });
-                toast.success('Logged successfully');
+                // condition for email verification
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                    toast.success('Logged successfully!');
+
+                } else {
+                    toast.error('Please verification first. Check your email to verify');
+                }
             })
             .catch(error => {
-                console.error(error);
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     };
 
@@ -35,6 +45,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate(from, { replace: true });
+                toast.success('Logged successfully!');
             })
             .catch(error => {
                 console.error(error);
@@ -47,6 +58,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate(from, { replace: true });
+                toast.success('Logged successfully!');
             })
             .catch(error => {
                 console.error(error);
@@ -74,8 +86,7 @@ const Login = () => {
                         <div>
                             <div className="flex justify-between">
                                 <div className="flex items-center">
-                                    <input type="checkbox" name="remember" id="remember" aria-label="Remember me" className="mr-1 rounded-sm focus:ring-violet-400 focus:dark:border-violet-400 focus:ring-2 accent-violet-400" />
-                                    <label for="remember" className="text-sm dark:text-white-100 text-white'">Remember me</label>
+                                    <p className='text-red-800'>{error}</p>
                                 </div>
                                 <p className="text-sm dark:text-white-100 text-white" href="/">Don't have an account?
                                     <Link to='/register' className="underline dark:text-gray-100"> Sign up </Link>

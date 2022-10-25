@@ -10,7 +10,7 @@ const Checkout = () => {
     const { course_name, price, } = checkout;
     return (
         <div>
-            <div className='flex justify-center items-center md:mt-0 mt-20 md:h-screen'>
+            <div className='flex justify-center items-center md:mt-0 mt-5 md:h-screen'>
                 <div className="flex flex-col md:w-2/3 mx-auto p-6 space-y-4 divide-y  divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
                     <h2 className="text-2xl font-semibold">Complete your enrollment</h2>
                     <ul className="flex flex-col pt-4 space-y-2">

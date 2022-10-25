@@ -4,7 +4,6 @@ import CategoryWiseCourseList from './CategoryWiseCourseList';
 
 const CategoryList = () => {
     const categoryDetail = useLoaderData();
-    // console.log(categoryDetail);
     return (
         <div>
             <h2 className='text-2xl mt-5 md:mt-5'>Start <span className='text-green-500 font-bold'>{categoryDetail[0].category}</span> Courses</h2>

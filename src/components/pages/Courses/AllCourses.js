@@ -4,9 +4,6 @@ import CoursesDetails from './CoursesDetails';
 
 const AllCourses = () => {
     const allCourses = useLoaderData();
-
-    // console.log(allCourses);
-
     return (
         <div className='flex justify-center'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>

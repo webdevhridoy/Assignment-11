@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const Register = () => {
-    const { newUser, updateUserInfo, signInGoogle, signInWithGithub } = useContext(AuthContext);
+    const { newUser, updateUserInfo, signInGoogle, signInWithGithub, verifyEmail } = useContext(AuthContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -25,7 +26,19 @@ const Register = () => {
                 navigate(from, { replace: true });
                 toast.success('Registered Completed!');
                 userUpdateProfile(name);
+                emailVerification();
 
+            })
+            .catch(error => {
+                setError(error.message);
+            });
+
+    };
+
+    const emailVerification = () => {
+        verifyEmail()
+            .then(result => {
+                toast.success('Please verify your email and check mail!');
             })
             .catch(error => {
                 console.error(error);
@@ -98,6 +111,7 @@ const Register = () => {
                             </div>
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white">Sign up</button>
+                        <p><small>{error}</small></p>
                     </form>
                     <div className="flex items-center pt-4 space-x-1">
                         <div className="flex-1 h-px sm:w-16 bg-white"></div>
