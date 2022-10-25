@@ -31,6 +31,7 @@ const Checkout = () => {
                         <p rel="noopener noreferrer" className="underline dark:text-green-400 text-base">Customer Information</p>
                         <div className="flex justify-between">
                             <span></span>
+                            <span>$0.00</span>
                         </div>
                         <div>
                             <div className='text-left'>
@@ -40,6 +41,7 @@ const Checkout = () => {
                         <div className="space-y-6">
                             <div className='text-left'>
                                 <span>Email: {user?.email}</span>
+                                <span className="font-semibold">$22.70</span>
                             </div>
                             <div className='flex flex-col md:flex-row justify-between items-center'>
                                 <button onClick={() => navigate(-2)} type="button" className=" w-full flex justify-center items-center md:my-0 my-2 md:w-1/3 mx-auto py-2 font-semibold border rounded dark:bg-green-400 dark:text-gray-900 dark:border-green-400">
