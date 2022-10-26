@@ -42,8 +42,7 @@ const CourseInfo = () => {
                                 <ReactToPdf className='' targetRef={ref} filename="LearnWithHridoy.pdf" options={options} x={0.5} y={0.5} scale={0.8}>
                                     {({ toPdf }) => (
                                         <button onClick={toPdf}>Generate & Download PDF</button>
-                                    )}</ReactToPdf>
-                            </Link>
+                                    )}</ReactToPdf></Link>
                         </div>
                     </div>
                 </div>

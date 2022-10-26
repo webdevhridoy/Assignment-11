@@ -10,9 +10,9 @@ import CourseInfo from "../pages/Courses/CourseInfo";
 import PrivateRoute from "./PrivateRoute";
 import Checkout from "../pages/Checkout/Checkout";
 import Blog from "../pages/Blog/Blog";
+import AllCourses from "../pages/Courses/AllCourses";
 import Congratulations from "../pages/Checkout/Congratulations";
 import Faq from "../pages/FAQ/Faq";
-import CourseCard from "../pages/Courses/CourseCard";
 
 export const routes = createBrowserRouter([
 
@@ -24,6 +24,11 @@ export const routes = createBrowserRouter([
                 path: '/',
                 loader: () => fetch('https://learn-with-hridoy-server.vercel.app/instructors'),
                 element: <Home></Home>
+            },
+            {
+                path: '/coures',
+                loader: () => fetch('https://learn-with-hridoy-server.vercel.app/courses/'),
+                element: <AllCourses></AllCourses>
             },
             {
                 path: '/course-details/:id',
@@ -40,19 +45,16 @@ export const routes = createBrowserRouter([
                 element: <Congratulations></Congratulations>
             },
             {
-                path: '/courses',
+                path: '/categories',
                 element: <CourseLayout></CourseLayout>,
                 children: [
+
                     {
-                        path: '/courses',
-                        loader: () => fetch('https://learn-with-hridoy-server.vercel.app/courses/'),
-                        element: <CourseCard></CourseCard>,
-                    },
-                    {
-                        path: '/courses/:name',
+                        path: '/categories/:name',
                         loader: ({ params }) => fetch(`https://learn-with-hridoy-server.vercel.app/categories/${params.name}`),
                         element: <CategoryList></CategoryList>
                     }
+
                 ]
             },
             {
