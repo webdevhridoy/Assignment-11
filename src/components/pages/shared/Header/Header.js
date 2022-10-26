@@ -36,7 +36,7 @@ const Header = () => {
                 <nav className="flex justify-between items-center">
                     <div className="flex items-center space-x-3 lg:pr-16 pr-6">
                         <Link to='/'>
-                            <img src={logo} className="mr-3 h-6 sm:h-9" alt='' />
+                            <img src={logo} className="mr-3 h-10 sm:h-12" alt='' />
                         </Link>
                     </div>
                     {/* For medium and plus sized devices */}
@@ -67,7 +67,7 @@ const Header = () => {
                             {user?.uid ?
                                 <>
                                     <button onClick={handleSignOut}>
-                                        <Link onClick={() => selected(4)} className={`${style[4] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded mx-1`}>Sign out</Link>
+                                        <Link onClick={() => selected(4)} className={`${style[4] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2 font-normal text-xs leading-3 shadow-md rounded mx-1`}>Sign out</Link>
                                     </button>
                                 </>
                                 :
