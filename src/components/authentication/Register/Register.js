@@ -84,11 +84,10 @@ const Register = () => {
                 console.error(error);
             });
     };
-
     return (
         <div className='my-32'>
-            <div className='flex justify-center items-center align-middle h-screen md:m-0 m-5'>
-                <div className="just w-3/5 mx-auto p-8 space-y-3  bg-green-500 dark:text-gray-100">
+            <div>
+                <div className="just p-8 space-y-3  bg-green-500 text-gray-100 m-5 md:m-20">
                     <h1 className="text-2xl font-bold text-center mb-10">Create a new account</h1>
                     <form onSubmit={handleSignUp} className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
@@ -106,11 +105,11 @@ const Register = () => {
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block text-white">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md text-black" />
-                            <div className="flex justify-end text-xs dark:text-gray-400">
+                            <div className="flex justify-end text-xs text-gray-400">
                                 <Link className='text-white' href="#">Forgot Password?</Link>
                             </div>
                         </div>
-                        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white">Sign up</button>
+                        <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-white">Sign up</button>
                         <p><small className='text-red-800'>{error}</small></p>
                     </form>
                     <div className="flex items-center pt-4 space-x-1">
@@ -131,7 +130,7 @@ const Register = () => {
                         </button>
                     </div>
                     <p className="text-xs text-center sm:px-6 text-white">Already have an account?
-                        <Link rel="noopener noreferrer" to='/login' className="underline dark:text-gray-100">Sign in</Link>
+                        <Link rel="noopener noreferrer" to='/login' className="underline text-gray-100">Sign in</Link>
                     </p>
                 </div>
             </div>

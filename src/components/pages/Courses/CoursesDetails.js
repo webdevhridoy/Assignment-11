@@ -6,7 +6,7 @@ const CoursesDetails = ({ courses }) => {
     return (
         <div>
             <div className="max-w-xs p-6 rounded-md shadow-md m-3">
-                <img src={image} alt="" className="object-cover object-center w-full rounded-md dark:bg-gray-500" />
+                <img src={image} alt="" className="object-cover object-center w-full rounded-md bg-gray-500" />
                 <div className='text-left'>
                     <div className="mt-6 mb-2">
                         <h2 className="text-base font-semibold tracking-wide">{course_name}</h2>

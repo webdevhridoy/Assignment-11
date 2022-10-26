@@ -67,8 +67,8 @@ const Login = () => {
 
     return (
         <div className='my-20'>
-            <div className='flex justify-center items-center align-middle h-screen md:m-0 m-5'>
-                <div className="flex flex-col just w-3/5 mx-auto p-12 space-y-4 text-white text-center dark:bg-green-500 dark:text-white-100">
+            <div>
+                <div className="just p-8 space-y-3  bg-green-500 text-gray-100 m-5 md:m-20">
                     <h1 className="text-2xl font-bold text-center mb-10">Sign in to your account</h1>
                     <form onSubmit={handleLogin} className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
@@ -78,18 +78,18 @@ const Login = () => {
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block text-white">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md text-black" />
-                            <div className="flex justify-end text-xs dark:text-gray-400">
-                                <Link rel="noopener noreferrer" href="#">Forgot Password?</Link>
+                            <div className="flex justify-end text-xs">
+                                <Link rel="noopener noreferrer" className='text-white'>Forgot Password?</Link>
                             </div>
                         </div>
-                        <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white">Sign in</button>
+                        <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-white">Sign in</button>
                         <div>
                             <div className="flex justify-between">
                                 <div className="flex items-center">
                                     <p className='text-red-800'>{error}</p>
                                 </div>
-                                <p className="text-sm dark:text-white-100 text-white" href="/">Don't have an account?
-                                    <Link to='/register' className="underline dark:text-gray-100"> Sign up </Link>
+                                <p className="text-sm text-white-100 text-white" href="/">Don't have an account?
+                                    <Link to='/register' className="underline text-gray-100"> Sign up </Link>
                                 </p>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ const Login = () => {
                         </button>
                     </div>
                     <p className="text-xs text-center sm:px-6 text-white">Already have an account?
-                        <Link rel="noopener noreferrer" to='/login' className="underline dark:text-gray-100">Sign in</Link>
+                        <Link rel="noopener noreferrer" to='/login' className="underline text-gray-100">Sign in</Link>
                     </p>
                 </div>
 

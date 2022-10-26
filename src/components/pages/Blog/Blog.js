@@ -7,7 +7,7 @@ const Blog = () => {
             <div className='mx-4 my-5'>
                 <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-green-500">
                     <div className="flex items-center justify-between">
-                        <p className="px-2 py-1 font-bold rounded bg-white dark:text-gray-900">CORS</p>
+                        <p className="px-2 py-1 font-bold rounded bg-white text-gray-900">CORS</p>
                     </div>
                     <div className="mt-3">
                         <h2 className="text-2xl font-bold hover:underline text-white">What is CORS</h2>
@@ -25,7 +25,7 @@ const Blog = () => {
             <div className='mx-4 my-5'>
                 <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-green-500">
                     <div className="flex items-center justify-between">
-                        <p className="px-2 py-1 font-bold rounded bg-white dark:text-gray-900">Firebase</p>
+                        <p className="px-2 py-1 font-bold rounded bg-white text-gray-900">Firebase</p>
                     </div>
                     <div className="mt-3">
                         <h2 className="text-2xl font-bold hover:underline text-white">Why Firebase is Used?</h2>
@@ -49,7 +49,7 @@ const Blog = () => {
             <div className='mx-4 my-5'>
                 <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-green-500">
                     <div className="flex items-center justify-between">
-                        <p className="px-2 py-1 font-bold rounded bg-white dark:text-gray-900">Private Route</p>
+                        <p className="px-2 py-1 font-bold rounded bg-white text-gray-900">Private Route</p>
                     </div>
                     <div className="mt-3">
                         <h2 className="text-2xl font-bold hover:underline text-white">How does the private route work?</h2>
@@ -66,7 +66,7 @@ const Blog = () => {
             <div className='mx-4 my-5'>
                 <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm bg-green-500">
                     <div className="flex items-center justify-between">
-                        <p className="px-2 py-1 font-bold rounded bg-white dark:text-gray-900">Node</p>
+                        <p className="px-2 py-1 font-bold rounded bg-white text-gray-900">Node</p>
                     </div>
                     <div className="mt-3">
                         <h2 className="text-2xl font-bold hover:underline text-white">What is Node? How does Node work?</h2>
