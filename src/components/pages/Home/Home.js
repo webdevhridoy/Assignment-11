@@ -15,7 +15,7 @@ const Home = () => {
                             <p className='text-slate-400 my-5 text-center md:text-left'>Learning is a life-long journey that in fact we never find the terminate stop. Stop searching, enjoy the process.</p>
                             <div className='mt-10 text-center md:text-left'>
                                 <Link rel="noopener noreferrer" to='/courses' className="px-8 py-3 font-semibold rounded bg-green-500 text-white mr-2">Courses</Link>
-                                <Link rel="noopener noreferrer" to='/blog' className="px-8 py-3 font-semibold rounded bg-green-500 text-white ml-2">Our Blogs</Link>
+                                <Link rel="noopener noreferrer" to='/blog' className="px-8 py-3 font-semibold rounded outline text-black ml-2 hover:bg-green-500 hover:text-white duration-500 ease-in-out hover:border-0 border-green-500">Our Blogs</Link>
                             </div>
                         </div>
                         <div className='flex justify-center items-center w-full md:w-2/4'>
