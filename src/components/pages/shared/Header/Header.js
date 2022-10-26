@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider';
 import toast from 'react-hot-toast';
 import ReactTooltip from 'react-tooltip';
+import userImage from '../../../assest/user profile.jpg';
 
 
 const Header = () => {
@@ -47,9 +48,10 @@ const Header = () => {
 
 
                         <Link to='/coures' onClick={() => selected(2)} className={`${style[2] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>Coures</Link>
-                        {/* <p data-tip="hello world">Tooltip</p>                         */}
 
                         <Link to='/blog' onClick={() => selected(3)} className={`${style[3] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>Blog</Link>
+
+                        <Link to='/faq' onClick={() => selected(4)} className={`${style[3] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>Faq</Link>
 
 
                     </div>
@@ -58,15 +60,11 @@ const Header = () => {
                             <Link>
                                 {user?.photoURL ?
                                     <>
-                                        <img data-tip={user?.displayName} style={{ height: '40px', width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" />
-                                        <ReactTooltip />
+                                        <img style={{ height: '40px', width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" title={user?.displayName} />
                                     </>
                                     :
                                     <>
-                                        <svg data-tip={user?.displayName} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                        <ReactTooltip />
+                                        <img style={{ height: '40px', width: '40px', borderRadius: '50%' }} src={userImage} alt="" title={user?.displayName} />
                                     </>
                                 }
                             </Link>
@@ -83,6 +81,13 @@ const Header = () => {
                                     <Link to='/register' onClick={() => selected(3)} className={`${style[3] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded mx-1`}>Register</Link>
                                 </>
                             }
+                            <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-100">
+                                <span className="relative">
+                                    <input id="Toggle1" type="checkbox" className="hidden peer" />
+                                    <div className="w-10 h-6 rounded-full shadow-inner dark:bg-white peer-checked:dark:bg-green-400"></div>
+                                    <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                                </span>
+                            </label>
                         </div>
                     </div>
                 </nav>
@@ -105,6 +110,8 @@ const Header = () => {
                             <Link to='/coures' onClick={() => selected(2)} className={`${style[2] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded mx-1`}>Coures</Link>
 
                             <Link to='/blog' onClick={() => selected(3)} className={`${style[3] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded mx-1`}>Blog</Link>
+
+                            <Link to='/faq' onClick={() => selected(4)} className={`${style[3] ? 'text-white bg-green-600' : 'text-gray-600 border border-white bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}>Faq</Link>
                         </div>
                     </div>
                 </div>
