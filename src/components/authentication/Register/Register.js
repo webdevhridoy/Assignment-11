@@ -92,8 +92,8 @@ const Register = () => {
                     <h1 className="text-2xl font-bold text-center mb-10">Create a new account</h1>
                     <form onSubmit={handleSignUp} className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
-                            <label htmlFor="username" className="block text-white">Your Name</label>
-                            <input type="text" name="name" id="name" placeholder="Your name" className="w-full px-4 py-3 rounded-md text-black" />
+                            <label htmlFor="username" className="block text-white">Full Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your full name" className="w-full px-4 py-3 rounded-md text-black" />
                         </div>
                         <div className="space-y-1 text-sm">
                             <label htmlFor="text" className="block text-white">Your Photo</label>
@@ -111,7 +111,7 @@ const Register = () => {
                             </div>
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 bg-white">Sign up</button>
-                        <p><small>{error}</small></p>
+                        <p><small className='text-red-800'>{error}</small></p>
                     </form>
                     <div className="flex items-center pt-4 space-x-1">
                         <div className="flex-1 h-px sm:w-16 bg-white"></div>

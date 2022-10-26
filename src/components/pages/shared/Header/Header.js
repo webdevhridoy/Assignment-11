@@ -3,7 +3,6 @@ import logo from '../../../assest/LOGO.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider';
 import toast from 'react-hot-toast';
-import ReactTooltip from 'react-tooltip';
 import userImage from '../../../assest/user profile.jpg';
 
 

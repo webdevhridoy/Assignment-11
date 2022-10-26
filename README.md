@@ -1,3 +1,26 @@
+# Here i'm going to add Assignment-10 - process and packages I have used. I have used React with several packges and tailwid css. Below you wil get all the details: 
+ 
+ 1. I have installed: 
+  * react router dom
+  * react-hot-toast
+  * react-to-pdf
+  * react icons
+  * react-tooltip(but didn't use properly)
+ 2. For dependency I have used
+  * TailwindCSS
+ 3. Let's talk about the functionality that you will in my website.
+  * It's a onlince course website
+  * Here you will get coruse layout and different courses with different instructors
+  * It's a multi-pags website where react dom context used 
+  * It's have authentications functionality
+  * After login it will take you the desire page that you want to go
+  * You can login/register with your google and github profile
+ 4. Let's talk about how it's worked?
+  * I have used backend server to create dynamic API
+  * There are coures, categories and id/name related specific API links created
+ 5. It's responsive website where grid and flex used for.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
