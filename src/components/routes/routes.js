@@ -12,6 +12,7 @@ import Checkout from "../pages/Checkout/Checkout";
 import Blog from "../pages/Blog/Blog";
 import AllCourses from "../pages/Courses/AllCourses";
 import Congratulations from "../pages/Checkout/Congratulations";
+import Faq from "../pages/FAQ/Faq";
 
 export const routes = createBrowserRouter([
 
@@ -64,8 +65,13 @@ export const routes = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path: 'register',
+                path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/faq',
+                loader: () => fetch('https://learn-with-hridoy-server.vercel.app/faq'),
+                element: <Faq></Faq>
             }
         ]
     },
