@@ -36,7 +36,7 @@ const Header = () => {
                 <nav className="flex justify-between items-center">
                     <div className="flex items-center space-x-3 lg:pr-16 pr-6">
                         <Link to='/'>
-                            <img src={logo} className="mr-3 h-10 sm:h-12" alt='' />
+                            <img src={logo} className="mr-3 h-7 sm:h-12" alt='' />
                         </Link>
                     </div>
                     {/* For medium and plus sized devices */}
