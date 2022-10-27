@@ -54,13 +54,14 @@ const Header = () => {
                     <div className=" flex space-x-5 justify-center items-center pl-2">
                         <div className="flex justify-center items-center relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 ">
                             <Link>
-                                {user?.photoURL ?
+                                {user?.uid || user?.email || user?.photoURL ?
                                     <>
-                                        <img style={{ height: '40px', width: '40px', borderRadius: '50%' }} src={user.photoURL} alt="" title={user?.displayName} />
+                                        <img style={{ height: '40px', width: '40px', borderRadius: '50%' }} src={user?.photoURL} alt="" title={user?.displayName} />
                                     </>
                                     :
                                     <>
                                         <img style={{ height: '40px', width: '40px', borderRadius: '50%' }} src={userImage} alt="" title={user?.displayName} />
+
                                     </>
                                 }
                             </Link>
