@@ -9,7 +9,7 @@ const Main = () => {
             <div className='mb-10'>
                 <Header></Header>
             </div>
-            <div>
+            <div className='container mx-auto'>
                 <Outlet></Outlet>
             </div>
             <div>

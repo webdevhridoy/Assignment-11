@@ -7,7 +7,7 @@ import event2 from '../../pages/Home/HomeImages/events-02.jpg';
 const Home = () => {
     const instructors = useLoaderData();
     return (
-        <div>
+        <div className='container mx-auto'>
             <div>
                 <div className='flex justify-center items-center'>
                     <div className='flex flex-col md:flex-row justify-center items-center align-middle mx-5 py-10'>
