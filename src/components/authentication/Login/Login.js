@@ -78,9 +78,6 @@ const Login = () => {
                         <div className="space-y-1 text-sm">
                             <label htmlFor="password" className="block text-white">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md text-black" />
-                            <div className="flex justify-end text-xs">
-                                <Link rel="noopener noreferrer" className='text-white'>Forgot Password?</Link>
-                            </div>
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm text-gray-900 bg-white">Sign in</button>
                         <div>
@@ -88,9 +85,6 @@ const Login = () => {
                                 <div className="flex items-center">
                                     <p className='text-red-800'>{error}</p>
                                 </div>
-                                <p className="text-sm text-white-100 text-white" href="/">Don't have an account?
-                                    <Link to='/register' className="underline text-gray-100"> Sign up </Link>
-                                </p>
                             </div>
                         </div>
                     </form>
@@ -111,8 +105,8 @@ const Login = () => {
                             </svg>
                         </button>
                     </div>
-                    <p className="text-xs text-center sm:px-6 text-white">Already have an account?
-                        <Link rel="noopener noreferrer" to='/login' className="underline text-gray-100">Sign in</Link>
+                    <p className="text-xs text-center sm:px-6 text-white" href="/">Don't have an account?
+                        <Link to='/register' className="underline text-gray-100"> Sign up </Link>
                     </p>
                 </div>
 
